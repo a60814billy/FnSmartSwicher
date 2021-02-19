@@ -11,6 +11,9 @@
 		A700D8E125DFF3EA00CF8E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A700D8E025DFF3EA00CF8E7F /* Assets.xcassets */; };
 		A700D8E425DFF3EA00CF8E7F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A700D8E225DFF3EA00CF8E7F /* MainMenu.xib */; };
 		A700D8E725DFF3EA00CF8E7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A700D8E625DFF3EA00CF8E7F /* main.m */; };
+		A700D8F225DFF49800CF8E7F /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A700D8F125DFF49800CF8E7F /* MyWindowController.m */; };
+		A700D8F625DFFA9A00CF8E7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700D8F525DFFA9A00CF8E7F /* IOKit.framework */; };
+		A77FEB7425E02B840069BC93 /* FKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77FEB7325E02B840069BC93 /* FKeyController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		A700D8E525DFF3EA00CF8E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A700D8E625DFF3EA00CF8E7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A700D8E825DFF3EA00CF8E7F /* FnSmartSwicher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FnSmartSwicher.entitlements; sourceTree = "<group>"; };
+		A700D8F025DFF49800CF8E7F /* MyWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWindowController.h; sourceTree = "<group>"; };
+		A700D8F125DFF49800CF8E7F /* MyWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWindowController.m; sourceTree = "<group>"; };
+		A700D8F525DFFA9A00CF8E7F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		A77FEB7225E02B840069BC93 /* FKeyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKeyController.h; sourceTree = "<group>"; };
+		A77FEB7325E02B840069BC93 /* FKeyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKeyController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A700D8F625DFFA9A00CF8E7F /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				A700D8DC25DFF3EA00CF8E7F /* FnSmartSwicher */,
 				A700D8DB25DFF3EA00CF8E7F /* Products */,
+				A700D8F425DFFA9A00CF8E7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,8 +71,20 @@
 				A700D8E525DFF3EA00CF8E7F /* Info.plist */,
 				A700D8E625DFF3EA00CF8E7F /* main.m */,
 				A700D8E825DFF3EA00CF8E7F /* FnSmartSwicher.entitlements */,
+				A700D8F025DFF49800CF8E7F /* MyWindowController.h */,
+				A700D8F125DFF49800CF8E7F /* MyWindowController.m */,
+				A77FEB7225E02B840069BC93 /* FKeyController.h */,
+				A77FEB7325E02B840069BC93 /* FKeyController.m */,
 			);
 			path = FnSmartSwicher;
+			sourceTree = "<group>";
+		};
+		A700D8F425DFFA9A00CF8E7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A700D8F525DFFA9A00CF8E7F /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +157,8 @@
 			files = (
 				A700D8E725DFF3EA00CF8E7F /* main.m in Sources */,
 				A700D8DF25DFF3EA00CF8E7F /* AppDelegate.m in Sources */,
+				A77FEB7425E02B840069BC93 /* FKeyController.m in Sources */,
+				A700D8F225DFF49800CF8E7F /* MyWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +302,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.raccoon.FnSmartSwicher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -298,6 +323,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.raccoon.FnSmartSwicher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

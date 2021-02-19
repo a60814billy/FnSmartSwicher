@@ -6,22 +6,29 @@
 //
 
 #import "AppDelegate.h"
+#import "MyWindowController.h"
 
 @interface AppDelegate ()
 
 @property (strong) IBOutlet NSWindow *window;
+@property (weak) IBOutlet MyWindowController *controller;
+
 @end
 
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserverForName:NSWorkspaceDidActivateApplicationNotification object:nil queue:nil usingBlock:^(NSNotification *notify) {
+        
+        NSRunningApplication *runningApp = [notify.userInfo valueForKey:@"NSWorkspaceApplicationKey"];
+        NSLog(@"%@", [runningApp bundleIdentifier]);
+        
+        [[self controller] onAppChanged:[runningApp bundleIdentifier]];
+        
+    }];
+    
+    [[self controller] viewLoaded];
+    
 }
-
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
-}
-
 
 @end
