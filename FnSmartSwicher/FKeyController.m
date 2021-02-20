@@ -42,11 +42,24 @@
 }
 
 - (void) setFnMode {
-    [self setMode:1];
+    io_connect_t handle = [self getIOConnect];
+    
+    if (handle) {
+        long mode = 1;
+        IOHIDSetParameter(handle, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
+        
+        IOObjectRelease(handle);
+    }
 }
 
 - (void) setAppleMode {
-    [self setMode:0];
+    io_connect_t handle = [self getIOConnect];
+    if (handle) {
+        long mode = 0;
+        IOHIDSetParameter(handle, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
+        
+        IOObjectRelease(handle);
+    }
 }
 
 - (void) setMode:(long) mode {
@@ -61,7 +74,6 @@
 }
 
 - (FnKeyState) getCurrentMode {
-    
     io_connect_t connect = [self getIOConnect];
     if (connect == -1) {
         return FnStateGetError;

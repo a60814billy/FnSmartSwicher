@@ -11,7 +11,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyWindowController : NSObject
 
-- (void)viewLoaded;
 - (void)onAppChanged:(NSString *)appIdentify;
 
 @end

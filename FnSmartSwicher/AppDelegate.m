@@ -26,9 +26,6 @@
         [[self controller] onAppChanged:[runningApp bundleIdentifier]];
         
     }];
-    
-    [[self controller] viewLoaded];
-    
 }
 
 @end
