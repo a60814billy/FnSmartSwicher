@@ -42,24 +42,11 @@
 }
 
 - (void) setFnMode {
-    io_connect_t handle = [self getIOConnect];
-    
-    if (handle) {
-        long mode = 1;
-        IOHIDSetParameter(handle, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
-        
-        IOObjectRelease(handle);
-    }
+    [self setMode:1];
 }
 
 - (void) setAppleMode {
-    io_connect_t handle = [self getIOConnect];
-    if (handle) {
-        long mode = 0;
-        IOHIDSetParameter(handle, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
-        
-        IOObjectRelease(handle);
-    }
+    [self setMode:0];
 }
 
 - (void) setMode:(long) mode {
@@ -67,9 +54,8 @@
     if (connect == -1) {
         return;
     }
-    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault, kCFNumberLongType, &mode);
+    IOHIDSetParameter(connect, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
     
-    IOConnectSetCFProperty(connect, CFSTR(kIOHIDFKeyModeKey), num);
     IOObjectRelease(connect);
 }
 

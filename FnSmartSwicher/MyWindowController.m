@@ -44,23 +44,33 @@
     } else {
         [keyController setAppleMode];
     }
-    NSLog(@"Change FKeyState to :%d", [keyController getCurrentMode]);
+    [self showCurrentState];
 }
 
 - (IBAction)onChangeBtnClick:(id)sender {
     [keyController toggleFnKey];
-    NSLog(@"Change FKeyState to :%d", [keyController getCurrentMode]);
+    [self showCurrentState];
 }
 
-- (IBAction)onLoopClick:(id)sender {
-    NSLog(@"test");
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        while (true) {
-            usleep(100);
-            [self onChangeBtnClick:nil];
-            
-        }
-    });
+-(void) showCurrentState {
+    FnKeyState state = [keyController getCurrentMode];
+    NSLog(@"Change FKeyState to :%d", state);
+    
+    NSMutableString *labelStr = [[NSMutableString alloc] initWithString:@"Current State: "];
+    
+    switch (state) {
+        case FnStateAppleMode:
+            [labelStr appendString:@"Apple Mode"];
+            break;
+        case FnStateFnMode:
+            [labelStr appendString:@"Fn Mode"];
+            break;
+        default:
+            [labelStr appendString:@"Unknown Mode"];
+            break;
+    }
+    
+    [[self stateLabel] setStringValue:labelStr];
 }
 
 @end
