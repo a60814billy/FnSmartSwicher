@@ -54,7 +54,11 @@
     if (connect == -1) {
         return;
     }
-    IOHIDSetParameter(connect, CFSTR(kIOHIDFKeyModeKey), &mode, sizeof(UInt32));
+    
+    CFNumberRef num = CFNumberCreate(kCFAllocatorDefault, kCFNumberLongType, &mode);
+    CFTypeRef numType = (CFTypeRef)num;
+    
+    IOHIDSetCFTypeParameter(connect, CFSTR(kIOHIDFKeyModeKey), numType);
     
     IOObjectRelease(connect);
 }
