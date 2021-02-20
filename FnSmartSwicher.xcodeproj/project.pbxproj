@@ -12,7 +12,6 @@
 		A700D8E425DFF3EA00CF8E7F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A700D8E225DFF3EA00CF8E7F /* MainMenu.xib */; };
 		A700D8E725DFF3EA00CF8E7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A700D8E625DFF3EA00CF8E7F /* main.m */; };
 		A700D8F225DFF49800CF8E7F /* MyWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A700D8F125DFF49800CF8E7F /* MyWindowController.m */; };
-		A700D8F625DFFA9A00CF8E7F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A700D8F525DFFA9A00CF8E7F /* IOKit.framework */; };
 		A77FEB7425E02B840069BC93 /* FKeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77FEB7325E02B840069BC93 /* FKeyController.m */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A700D8F625DFFA9A00CF8E7F /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +293,7 @@
 				CODE_SIGN_ENTITLEMENTS = FnSmartSwicher/FnSmartSwicher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 492S5PBWMX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = FnSmartSwicher/Info.plist;
@@ -303,6 +302,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.raccoon.FnSmartSwicher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -316,6 +316,7 @@
 				CODE_SIGN_ENTITLEMENTS = FnSmartSwicher/FnSmartSwicher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 492S5PBWMX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = FnSmartSwicher/Info.plist;
@@ -324,6 +325,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.raccoon.FnSmartSwicher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

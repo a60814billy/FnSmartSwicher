@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MyWindowController : NSObject
 
 - (void)onAppChanged:(NSString *)appIdentify;
+-(void) showCurrentState;
 
 @end
 
